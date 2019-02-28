@@ -1,0 +1,19 @@
+<div class="left">
+
+  <input type="text" placeholder="name" #name>
+  <input type="text" placeholder="actor" #actor>
+  <input type="text" placeholder="details" #details>
+
+  <button (click)="create(name.value,actor.value, details.value)">Add a Tutorial</button>
+</div>
+
+<div class="right" *ngIf="books">
+
+  <h3>Books</h3>
+  <ul>
+    <li *ngFor="let item of books | async; let i = index">
+      {{ item.name }}
+    </li>
+  </ul>
+
+</div>
